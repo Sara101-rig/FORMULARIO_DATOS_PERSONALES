@@ -1,0 +1,370 @@
+/* ==============================
+   CONFIGURACIÓN GENERAL
+================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    /* Fondo rosado con más contraste */
+    background: linear-gradient(
+        135deg,
+        #e59abb,
+        #f5bfd7,
+        #d77da8,
+        #f8dce9
+    );
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 40px 20px;
+}
+
+
+/* ==============================
+   CONTENEDOR
+================================= */
+
+.contenedor {
+
+    width: 100%;
+
+    max-width: 1000px;
+}
+
+
+/* ==============================
+   TARJETA
+================================= */
+
+.formulario-container {
+
+    background: rgba(255, 255, 255, 0.97);
+
+    padding: 45px 55px;
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 20px 50px rgba(120, 40, 80, 0.25);
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+
+/* ==============================
+   ENCABEZADO
+================================= */
+.encabezado {
+    margin-bottom: 35px;
+    text-align: center;
+}
+
+.encabezado h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: #5c2944;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.encabezado p {
+    color: #8a5c70;
+    font-size: 15px;
+    letter-spacing: 0.3px;
+}
+
+/* ==============================
+   FILAS
+================================= */
+
+.form-row {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 22px;
+
+    margin-bottom: 22px;
+}
+
+
+/* Primera fila: 3 campos */
+
+.primera-fila {
+
+    grid-template-columns:
+        1fr
+        1fr
+        1fr;
+}
+
+
+/* ==============================
+   GRUPOS
+================================= */
+
+.form-group {
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+.form-group label {
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    color: #4a3b42;
+
+    margin-bottom: 9px;
+}
+
+
+/* ==============================
+   INPUTS
+================================= */
+
+.form-group input,
+.form-group select {
+
+    width: 100%;
+
+    height: 48px;
+
+    border: 1px solid #dfc8d3;
+
+    border-radius: 10px;
+
+    padding: 0 15px;
+
+    font-size: 14px;
+
+    color: #333;
+
+    background-color: #ffffff;
+
+    outline: none;
+
+    transition: 0.3s;
+}
+
+
+.form-group input::placeholder {
+
+    color: #aaa;
+}
+
+
+/* Cuando hacemos clic en un campo */
+
+.form-group input:focus,
+.form-group select:focus {
+
+    border-color: #d9689c;
+
+    box-shadow:
+        0 0 0 3px rgba(217, 104, 156, 0.15);
+}
+
+
+/* ==============================
+   CHECKBOX
+================================= */
+
+.check-container {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 10px;
+
+    margin-top: 10px;
+
+    margin-bottom: 30px;
+
+    color: #665961;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+.check-container input {
+
+    width: 17px;
+
+    height: 17px;
+
+    margin-top: 2px;
+
+    accent-color: #d9689c;
+
+    cursor: pointer;
+}
+
+
+.check-container label {
+
+    cursor: pointer;
+}
+
+
+/* ==============================
+   BOTÓN
+================================= */
+.boton-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.btn-enviar {
+    border: none;
+
+    background: linear-gradient(
+        135deg,
+        #e884b0,
+        #d15b91
+    );
+
+    color: white;
+
+    padding: 15px 45px;
+
+    border-radius: 12px;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.3px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 18px rgba(209, 91, 145, 0.30);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+
+/* Cuando pasas el mouse */
+
+.btn-enviar:hover {
+
+    background: linear-gradient(
+        135deg,
+        #d9689c,
+        #c65388
+    );
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 25px rgba(209, 91, 145, 0.40);
+}
+
+
+/* Cuando haces clic */
+
+.btn-enviar:active {
+
+    transform: translateY(0);
+
+    box-shadow:
+        0 5px 12px rgba(209, 91, 145, 0.25);
+}
+
+/* ==============================
+   DISEÑO RESPONSIVE
+================================= */
+
+@media (max-width: 800px) {
+
+    .formulario-container {
+
+        padding: 35px 30px;
+    }
+
+
+    .primera-fila {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .form-row {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .boton-container {
+
+        justify-content: stretch;
+    }
+
+
+    .btn-enviar {
+
+        width: 100%;
+    }
+}
+
+
+/* ==============================
+   CELULARES
+================================= */
+
+@media (max-width: 500px) {
+
+    body {
+
+        padding: 20px 12px;
+    }
+
+
+    .formulario-container {
+
+        padding: 28px 20px;
+
+        border-radius: 20px;
+    }
+
+
+    .encabezado h1 {
+
+        font-size: 28px;
+    }
+
+
+    .encabezado p {
+
+        font-size: 14px;
+    }
+}
